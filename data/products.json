@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "title": "Fullstar Vegetable Chopper",
+    "category": "Kitchen",
+    "brand": "Sony",
+  "price": "$99.99",
+  "oldPrice": "$129.99",
+  "discount": "23%",
+  "rating": 4.8,
+  "reviews": 1254,
+  "badge": "Best Seller",
+  "description": "Premium noise cancelling headphones.",
+  "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
+  "affiliate": "https://amzn.to/4fZMAjF"
+  },
+  {
+    "id": 2,
+    "title": "Coffee Maker",
+    "category": "Kitchen",
+   "brand": "Sony",
+  "price": "$49.99",
+  "oldPrice": "$129.99",
+  "discount": "23%",
+  "rating": 4.8,
+  "reviews": 1254,
+  "badge": "Best Seller",
+  "description": "Premium noise cancelling headphones.",
+  "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600",
+  "affiliate": "https://amzn.to/455scZr"
+  },
+  {
+    "id": 3,
+    "title": "Wireless Headphones",
+    "category": "Tech",
+    "brand": "Sony",
+  "price": "$99.99",
+  "oldPrice": "$129.99",
+  "discount": "23%",
+  "rating": 4.8,
+  "reviews": 1254,
+  "badge": "Best Seller",
+  "description": "Premium noise cancelling headphones.",
+  "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600",
+  "affiliate": "https://amzn.to/4pYZQcN"
+  }
+  
+]
