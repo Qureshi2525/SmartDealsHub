@@ -456,3 +456,394 @@ font-size:24px;
     padding:14px 32px;
     font-weight:600;
 }
+/* ================= LEGAL PAGES ================= */
+
+.legal-page {
+    min-height: 70vh;
+    padding: 40px 0;
+    background: #f8f9fa;
+}
+
+.legal-card {
+    max-width: 950px;
+    margin: auto;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.legal-card h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.legal-card h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.legal-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.affiliate-box {
+    border-left: 5px solid #ffc107;
+    background: #fff9e6;
+    padding: 22px 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.affiliate-box p {
+    margin-bottom: 10px;
+}
+
+.legal-card a {
+    color: #0d6efd;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.legal-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+    background: #101b35;
+    color: white;
+    padding: 30px 0;
+}
+
+.site-footer p {
+    color: #ffffff;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #ffc107;
+}
+
+
+/* ================= DARK MODE ================= */
+
+.dark-mode .legal-page {
+    background: #111827;
+}
+
+.dark-mode .legal-card {
+    background: #1f2937;
+    color: white;
+}
+
+.dark-mode .legal-card p {
+    color: #d1d5db;
+}
+
+.dark-mode .affiliate-box {
+    background: #292516;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .legal-card {
+        padding: 30px 20px;
+    }
+
+    .legal-card h1 {
+        font-size: 32px;
+    }
+
+    .legal-card h2 {
+        font-size: 22px;
+    }
+
+    .legal-card p {
+        font-size: 15px;
+    }
+
+}
+/* =========================
+   LEGAL PAGES
+========================= */
+
+.legal-page {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 45px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.legal-page h1 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-weight: 700;
+}
+
+.legal-page h2 {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.legal-page p {
+    line-height: 1.8;
+    color: #555;
+}
+
+.legal-page a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.legal-page a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer */
+
+.footer {
+    background: #111827;
+    color: #ffffff;
+}
+
+.footer h5 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: #d1d5db;
+}
+
+.footer a {
+    color: #d1d5db;
+    text-decoration: none;
+    line-height: 2;
+}
+
+.footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .legal-page {
+        padding: 25px 20px;
+        margin: 15px auto;
+    }
+
+    .legal-page h1 {
+        font-size: 2rem;
+    }
+
+    .legal-page h2 {
+        font-size: 1.2rem;
+    }
+
+}
+/* ================= LEGAL PAGES ================= */
+
+.legal-page {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 45px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.legal-page h1 {
+    color: #283653;
+    font-weight: 700;
+}
+
+.legal-page h3 {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    color: #283653;
+    font-weight: 700;
+}
+
+.legal-page p {
+    line-height: 1.8;
+    color: #666;
+}
+
+.legal-page a {
+    color: #0066ff;
+    text-decoration: none;
+}
+
+.legal-page a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #101c36;
+    color: white;
+    padding: 35px 20px;
+}
+
+.footer h5 {
+    color: #f5b400;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.footer p {
+    color: #cbd2df;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #f5b400;
+}
+
+
+/* ================= DARK MODE ================= */
+
+body.dark-mode .legal-page {
+    background: #18243d;
+}
+
+body.dark-mode .legal-page h1,
+body.dark-mode .legal-page h3 {
+    color: #fff;
+}
+
+body.dark-mode .legal-page p {
+    color: #d0d5df;
+}
+/* =========================================
+   SMARTDEALSHUB NAVBAR - FORCE FIX
+   ========================================= */
+
+.navbar {
+    background: #101c36 !important;
+    min-height: 70px;
+    padding: 12px 0 !important;
+}
+
+.navbar .navbar-brand {
+    color: #f5a623 !important;
+    font-weight: 700 !important;
+    font-size: 28px;
+    text-decoration: none !important;
+    opacity: 1 !important;
+}
+
+.navbar .navbar-nav {
+    display: flex !important;
+    align-items: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.navbar .nav-item {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.navbar .nav-link {
+    display: block !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding: 10px 14px !important;
+}
+
+.navbar .nav-link:hover {
+    color: #f5a623 !important;
+}
+
+.navbar .nav-link i {
+    color: #e91e63 !important;
+    visibility: visible !important;
+}
+
+.navbar .badge {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-left: 3px;
+}
+
+.navbar .btn {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(255,255,255,.5) !important;
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+
+/* Mobile */
+@media (max-width: 991px) {
+
+    .navbar .navbar-nav {
+        background: #101c36 !important;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    .navbar .nav-link {
+        color: #ffffff !important;
+        padding: 12px 10px !important;
+    }
+
+}

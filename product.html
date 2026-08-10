@@ -18,16 +18,72 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<div class="container">
+<!-- ================= NAVBAR ================= -->
 
-<a class="navbar-brand" href="index.html">
-SmartDealsHub
-</a>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
 
-</div>
+        <a class="navbar-brand fw-bold" href="index.html">
+            SmartDealsHub
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="wishlist.html">
+                        <i class="fa-solid fa-heart text-danger"></i>
+                        Wishlist
+                        <span id="wishlistCount"
+                              class="badge bg-danger">0</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="blog/">
+                        Blog
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <button id="darkModeToggle"
+                            class="btn btn-outline-light">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
 </nav>
-
+<main class="container py-5">
 <div class="container py-5">
 
 <div class="row">
@@ -105,6 +161,39 @@ SmartDealsHub
 </div>
 
 </div>
+</main>
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+
+    <div class="container text-center">
+
+        <p class="mb-2">
+            © 2026 <strong>SmartDealsHub</strong>. All Rights Reserved.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <span>|</span>
+
+            <a href="disclaimer.html">Disclaimer</a>
+
+            <span>|</span>
+            <div class="footer-links">
+
+        <a href="terms.html">Terms & Conditions</a>
+
+    <span>|</span>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </div>
+
+</footer>
 
 <script src="js/product.js"></script>
 <script>
@@ -150,5 +239,10 @@ function copyProductLink() {
         });
 }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/darkmode.js"></script>
+
+<script src="js/wishlist.js"></script>
 </body>
 </html>
