@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qureshi2525.github.io/SmartDealsHub/sitemap.xml
