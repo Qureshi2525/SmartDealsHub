@@ -27,12 +27,6 @@
     </url>
 
     <url>
-        <loc>https://qureshi2525.github.io/SmartDealsHub/wishlist.html</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <url>
         <loc>https://qureshi2525.github.io/SmartDealsHub/privacy.html</loc>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
