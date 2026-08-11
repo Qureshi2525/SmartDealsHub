@@ -1,94 +1,123 @@
-let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+// =====================================
+// SmartDealsHub Wishlist
+// =====================================
 
-const container = document.getElementById("wishlistProducts");
+let wishlist =
+    JSON.parse(localStorage.getItem("wishlist")) || [];
 
-if (wishlist.length === 0) {
+const container =
+    document.getElementById("wishlistProducts");
 
-    container.innerHTML = `
-        <div class="col-12 text-center">
+// If wishlist container does not exist on this page,
+// stop without causing a JavaScript error.
+if (container) {
 
-            <h3>Your Wishlist is Empty ❤️</h3>
+    // ==============================
+    // EMPTY WISHLIST
+    // ==============================
 
-            <a href="index.html" class="btn btn-primary mt-3">
+    if (wishlist.length === 0) {
 
-                Shop Now
+        container.innerHTML = `
+            <div class="col-12 text-center">
 
-            </a>
+                <h3>Your Wishlist is Empty ❤️</h3>
 
-        </div>
-    `;
+                <a href="index.html"
+                   class="btn btn-primary mt-3">
 
-} else {
+                    Shop Now
 
-    let output = "";
+                </a>
 
-    wishlist.forEach(product => {
+            </div>
+        `;
 
-        output += `
+    } else {
 
-        <div class="col-lg-4 col-md-6 mb-4">
+        // ==============================
+        // DISPLAY WISHLIST
+        // ==============================
 
-            <div class="product-card">
+        let output = "";
 
-                <img src="${product.image}" class="product-img">
+        wishlist.forEach(product => {
 
-                <div class="product-content">
+            output += `
 
-                    <h5>${product.title}</h5>
+                <div class="col-lg-4 col-md-6 mb-4">
 
-                    <p>${product.price}</p>
+                    <div class="product-card">
 
-                    <div class="d-grid gap-2">
+                        <img
+                            src="${product.image}"
+                            class="product-img"
+                            alt="${product.title}"
+                        >
 
-                        <a href="product.html?id=${product.id}"
+                        <div class="product-content">
 
-                        class="btn btn-primary">
+                            <h5>${product.title}</h5>
 
-                        View Details
+                            <p>${product.price}</p>
 
-                        </a>
+                            <div class="d-grid gap-2">
 
-                        <a href="${product.affiliate}"
+                                <a
+                                    href="product.html?id=${product.id}"
+                                    class="btn btn-primary"
+                                >
+                                    View Details
+                                </a>
 
-                        target="_blank"
+                                <a
+                                    href="${product.affiliate}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="btn btn-warning"
+                                >
+                                    Buy on Amazon
+                                </a>
 
-                        class="btn btn-warning">
+                                <button
+                                    class="btn btn-danger"
+                                    onclick="removeWishlist(${product.id})"
+                                >
+                                    Remove
+                                </button>
 
-                        Buy on Amazon
+                            </div>
 
-                        </a>
-
-                        <button
-
-                        class="btn btn-danger"
-
-                        onclick="removeWishlist(${product.id})">
-
-                        Remove
-
-                        </button>
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
+            `;
 
-        </div>
+        });
 
-        `;
+        container.innerHTML = output;
 
-    });
-
-    container.innerHTML = output;
+    }
 
 }
 
-function removeWishlist(id){
 
-    wishlist = wishlist.filter(product => product.id !== id);
+// ==============================
+// REMOVE FROM WISHLIST
+// ==============================
 
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+function removeWishlist(id) {
+
+    wishlist =
+        wishlist.filter(product => product.id !== id);
+
+    localStorage.setItem(
+        "wishlist",
+        JSON.stringify(wishlist)
+    );
 
     location.reload();
 
