@@ -47,7 +47,45 @@ fetch("data/products.json")
         document.getElementById("buyButton").href =
             product.affiliate;
 
+// ==============================
+// PRODUCT SCHEMA / JSON-LD
+// ==============================
 
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+
+    "name": product.title,
+
+    "image": [
+        product.image
+    ],
+
+    "description": product.description,
+
+    "brand": {
+        "@type": "Brand",
+        "name": product.brand
+    },
+
+    "offers": {
+        "@type": "Offer",
+        "url": window.location.href,
+        "priceCurrency": "USD",
+        "price": String(product.price).replace(/[^0-9.]/g, ""),
+        "availability": "https://schema.org/InStock"
+    }
+};
+
+const schemaElement =
+    document.getElementById("productSchema");
+
+if (schemaElement) {
+
+    schemaElement.textContent =
+        JSON.stringify(schema);
+
+}
         // ==============================
         // SEO
         // ==============================
