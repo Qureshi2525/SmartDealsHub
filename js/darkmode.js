@@ -1,25 +1,42 @@
+// =====================================
+// SmartDealsHub Dark Mode
+// =====================================
+
 const btn = document.getElementById("darkModeBtn");
 
-// Previous setting load
-if(localStorage.getItem("theme") === "dark"){
-    document.body.classList.add("dark-mode");
-    btn.innerHTML = "☀️";
-}
+// If dark mode button does not exist on this page,
+// stop without causing a JavaScript error.
+if (btn) {
 
-btn.addEventListener("click", ()=>{
+    // Previous setting load
+    if (localStorage.getItem("theme") === "dark") {
 
-    document.body.classList.toggle("dark-mode");
-
-    if(document.body.classList.contains("dark-mode")){
-
-        localStorage.setItem("theme","dark");
+        document.body.classList.add("dark-mode");
         btn.innerHTML = "☀️";
 
-    }else{
+    } else {
 
-        localStorage.setItem("theme","light");
         btn.innerHTML = "🌙";
 
     }
 
-});
+    // Dark mode button
+    btn.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+
+            localStorage.setItem("theme", "dark");
+            btn.innerHTML = "☀️";
+
+        } else {
+
+            localStorage.setItem("theme", "light");
+            btn.innerHTML = "🌙";
+
+        }
+
+    });
+
+}
