@@ -20,9 +20,9 @@ fetch("data/products.json")
             return;
         }
 
-        // ==============================
+        // =====================================
         // PRODUCT DETAILS
-        // ==============================
+        // =====================================
 
         document.getElementById("productImage").src = product.image;
 
@@ -47,68 +47,182 @@ fetch("data/products.json")
         document.getElementById("buyButton").href =
             product.affiliate;
 
-// ==============================
-// PRODUCT SCHEMA / JSON-LD
-// ==============================
 
-const schema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
+        // =====================================
+        // PRICE
+        // =====================================
 
-    "name": product.title,
+        const numericPrice =
+            String(product.price)
+                .replace(/[^0-9.]/g, "");
 
-    "image": [
-        product.image
-    ],
+        const priceNumber =
+            parseFloat(numericPrice);
 
-    "description": product.description,
 
-    "brand": {
-        "@type": "Brand",
-        "name": product.brand
-    },
+        // =====================================
+        // PRODUCT SCHEMA / JSON-LD
+        // =====================================
 
-    "offers": {
-        "@type": "Offer",
-        "url": window.location.href,
-        "priceCurrency": "USD",
-        "price": String(product.price).replace(/[^0-9.]/g, ""),
-        "availability": "https://schema.org/InStock"
-    }
-};
+        const schema = {
 
-const schemaElement =
-    document.getElementById("productSchema");
+            "@context": "https://schema.org",
 
-if (schemaElement) {
+            "@type": "Product",
 
-    schemaElement.textContent =
-        JSON.stringify(schema);
+            "name": product.title,
 
-}
-        // ==============================
-        // SEO
-        // ==============================
+            "image": [
+                product.image
+            ],
 
-        document.title =
-            `${product.title} | SmartDealsHub`;
+            "description": product.description,
 
-        let descriptionTag =
-            document.querySelector('meta[name="description"]');
+            "brand": {
+                "@type": "Brand",
+                "name": product.brand
+            },
 
-        if (descriptionTag) {
+            "offers": {
 
-            descriptionTag.setAttribute(
-                "content",
-                `${product.title} - ${product.description} Find product details, ratings and Amazon deals at SmartDealsHub.`
-            );
+                "@type": "Offer",
+
+                "url": window.location.href,
+
+                "priceCurrency": "USD",
+
+                "price": priceNumber,
+
+                "availability":
+                    "https://schema.org/InStock",
+
+                "itemCondition":
+                    "https://schema.org/NewCondition"
+
+            }
+
+        };
+
+
+        // =====================================
+        // ADD RATING ONLY IF VALID
+        // =====================================
+
+        const rating =
+            parseFloat(product.rating);
+
+        const reviewCount =
+            parseInt(product.reviews || 0);
+
+
+        if (
+            !isNaN(rating) &&
+            rating > 0 &&
+            rating <= 5 &&
+            reviewCount > 0
+        ) {
+
+            schema.aggregateRating = {
+
+                "@type": "AggregateRating",
+
+                "ratingValue": rating,
+
+                "reviewCount": reviewCount
+
+            };
 
         }
 
 
-        // ==============================
+        // =====================================
+        // UPDATE JSON-LD
+        // =====================================
+
+        const schemaElement =
+            document.getElementById("productSchema");
+
+        if (schemaElement) {
+
+            schemaElement.textContent =
+                JSON.stringify(schema);
+
+        }
+
+
+        // =====================================
+        // SEO TITLE
+        // =====================================
+
+        document.title =
+            `${product.title} | SmartDealsHub`;
+
+
+        // =====================================
+        // META DESCRIPTION
+        // =====================================
+
+        let descriptionTag =
+            document.querySelector(
+                'meta[name="description"]'
+            );
+
+        if (!descriptionTag) {
+
+            descriptionTag =
+                document.createElement("meta");
+
+            descriptionTag.setAttribute(
+                "name",
+                "description"
+            );
+
+            document.head.appendChild(
+                descriptionTag
+            );
+
+        }
+
+        descriptionTag.setAttribute(
+            "content",
+            `${product.title} - ${product.description} Find product details, ratings and Amazon deals at SmartDealsHub.`
+        );
+
+
+        // =====================================
+        // CANONICAL URL
+        // =====================================
+
+        let canonical =
+            document.querySelector(
+                'link[rel="canonical"]'
+            );
+
+        if (!canonical) {
+
+            canonical =
+                document.createElement("link");
+
+            canonical.setAttribute(
+                "rel",
+                "canonical"
+            );
+
+            document.head.appendChild(
+                canonical
+            );
+
+        }
+
+        canonical.setAttribute(
+            "href",
+            window.location.href
+        );
+
+
+        // =====================================
         // PINTEREST
-        // ==============================
+        // =====================================
 
         const pinterestURL =
             `https://www.pinterest.com/pin/create/button/?url=${
@@ -123,84 +237,31 @@ if (schemaElement) {
             document.getElementById("pinterestBtn");
 
         if (pinterestBtn) {
-            pinterestBtn.href = pinterestURL;
+            pinterestBtn.href =
+                pinterestURL;
         }
 
 
-        // ==============================
-        // WHATSAPP
-        // ==============================
-
-        const currentURL =
-            window.location.href;
-
-        const whatsappShare =
-            document.getElementById("whatsappShare");
-
-        if (whatsappShare) {
-
-            whatsappShare.href =
-                `https://wa.me/?text=${
-                    encodeURIComponent(
-                        product.title + " " + currentURL
-                    )
-                }`;
-
-        }
-
-
-        // ==============================
-        // FACEBOOK
-        // ==============================
-
-        const facebookShare =
-            document.getElementById("facebookShare");
-
-        if (facebookShare) {
-
-            facebookShare.href =
-                `https://www.facebook.com/sharer/sharer.php?u=${
-                    encodeURIComponent(currentURL)
-                }`;
-
-        }
-
-
-        // ==============================
-        // X / TWITTER
-        // ==============================
-
-        const twitterShare =
-            document.getElementById("twitterShare");
-
-        if (twitterShare) {
-
-            twitterShare.href =
-                `https://twitter.com/intent/tweet?url=${
-                    encodeURIComponent(currentURL)
-                }&text=${
-                    encodeURIComponent(product.title)
-                }`;
-
-        }
-
-
-        // ==============================
+        // =====================================
         // COPY LINK
-        // ==============================
+        // =====================================
 
-        window.copyLink = function () {
+        window.copyProductLink = function () {
 
             navigator.clipboard
                 .writeText(window.location.href)
                 .then(() => {
 
-                    alert("Product Link Copied!");
+                    alert(
+                        "Product link copied successfully!"
+                    );
 
                 })
                 .catch(() => {
 
-                    alert("Unable to copy link.");
+                    alert(
+                        "Unable to copy link."
+                    );
 
                 });
 
