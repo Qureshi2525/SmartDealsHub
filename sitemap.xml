@@ -4,38 +4,38 @@
 
     <url>
         <loc>https://qureshi2525.github.io/SmartDealsHub/</loc>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://qureshi2525.github.io/SmartDealsHub/product.html?id=1</loc>
+    </url>
+
+    <url>
+        <loc>https://qureshi2525.github.io/SmartDealsHub/product.html?id=2</loc>
+    </url>
+
+    <url>
+        <loc>https://qureshi2525.github.io/SmartDealsHub/product.html?id=3</loc>
     </url>
 
     <url>
         <loc>https://qureshi2525.github.io/SmartDealsHub/about.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://qureshi2525.github.io/SmartDealsHub/contact.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://qureshi2525.github.io/SmartDealsHub/privacy.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
     </url>
 
     <url>
         <loc>https://qureshi2525.github.io/SmartDealsHub/disclaimer.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
     </url>
 
     <url>
         <loc>https://qureshi2525.github.io/SmartDealsHub/terms.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
     </url>
 
 </urlset>
