@@ -24,7 +24,11 @@ fetch("data/products.json")
         // PRODUCT DETAILS
         // =====================================
 
-        document.getElementById("productImage").src = product.image;
+        document.getElementById("productImage").src =
+            product.image;
+
+        document.getElementById("productImage").alt =
+            product.title;
 
         document.getElementById("productTitle").innerText =
             product.title;
@@ -49,15 +53,29 @@ fetch("data/products.json")
 
 
         // =====================================
-        // PRICE
+        // PRICE - GOOGLE STRUCTURED DATA
         // =====================================
 
-        const numericPrice =
-            String(product.price)
-                .replace(/[^0-9.]/g, "");
+        let priceNumber = null;
 
-        const priceNumber =
-            parseFloat(numericPrice);
+        if (typeof product.price === "number") {
+
+            priceNumber = product.price;
+
+        } else if (typeof product.price === "string") {
+
+            const cleanedPrice =
+                product.price
+                    .replace(/[^0-9.]/g, "");
+
+            if (cleanedPrice !== "") {
+
+                priceNumber =
+                    parseFloat(cleanedPrice);
+
+            }
+
+        }
 
 
         // =====================================
@@ -81,9 +99,23 @@ fetch("data/products.json")
             "brand": {
                 "@type": "Brand",
                 "name": product.brand
-            },
+            }
 
-            "offers": {
+        };
+
+
+        // =====================================
+        // ADD OFFER ONLY WHEN PRICE IS VALID
+        // =====================================
+
+        if (
+            priceNumber !== null &&
+            !isNaN(priceNumber) &&
+            isFinite(priceNumber) &&
+            priceNumber > 0
+        ) {
+
+            schema.offers = {
 
                 "@type": "Offer",
 
@@ -99,9 +131,9 @@ fetch("data/products.json")
                 "itemCondition":
                     "https://schema.org/NewCondition"
 
-            }
+            };
 
-        };
+        }
 
 
         // =====================================
@@ -237,8 +269,10 @@ fetch("data/products.json")
             document.getElementById("pinterestBtn");
 
         if (pinterestBtn) {
+
             pinterestBtn.href =
                 pinterestURL;
+
         }
 
 
@@ -250,6 +284,7 @@ fetch("data/products.json")
 
             navigator.clipboard
                 .writeText(window.location.href)
+
                 .then(() => {
 
                     alert(
@@ -257,6 +292,7 @@ fetch("data/products.json")
                     );
 
                 })
+
                 .catch(() => {
 
                     alert(
