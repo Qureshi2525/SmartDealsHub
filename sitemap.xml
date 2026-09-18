@@ -2,40 +2,28 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <url>
-        <loc>https://qureshi2525.github.io/SmartDealsHub/</loc>
-    </url>
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/</loc>
+  </url>
 
-    <url>
-        <loc>https://qureshi2525.github.io/SmartDealsHub/product.html?id=1</loc>
-    </url>
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/about.html</loc>
+  </url>
 
-    <url>
-        <loc>https://qureshi2525.github.io/SmartDealsHub/product.html?id=2</loc>
-    </url>
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/contact.html</loc>
+  </url>
 
-    <url>
-        <loc>https://qureshi2525.github.io/SmartDealsHub/product.html?id=3</loc>
-    </url>
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/privacy.html</loc>
+  </url>
 
-    <url>
-        <loc>https://qureshi2525.github.io/SmartDealsHub/about.html</loc>
-    </url>
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/disclaimer.html</loc>
+  </url>
 
-    <url>
-        <loc>https://qureshi2525.github.io/SmartDealsHub/contact.html</loc>
-    </url>
-
-    <url>
-        <loc>https://qureshi2525.github.io/SmartDealsHub/privacy.html</loc>
-    </url>
-
-    <url>
-        <loc>https://qureshi2525.github.io/SmartDealsHub/disclaimer.html</loc>
-    </url>
-
-    <url>
-        <loc>https://qureshi2525.github.io/SmartDealsHub/terms.html</loc>
-    </url>
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/wishlist.html</loc>
+  </url>
 
 </urlset>
