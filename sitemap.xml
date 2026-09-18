@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://qureshi2525.github.io/SmartDealsHub/</loc>
   </url>
 
+  <!-- Categories -->
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/categories/kitchen.html</loc>
+  </url>
+
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/categories/tech.html</loc>
+  </url>
+
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/categories/home.html</loc>
+  </url>
+
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/categories/beauty.html</loc>
+  </url>
+
+  <!-- Product Pages -->
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/product.html?id=1</loc>
+  </url>
+
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/product.html?id=2</loc>
+  </url>
+
+  <url>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/product.html?id=3</loc>
+  </url>
+
+  <!-- Information Pages -->
   <url>
     <loc>https://qureshi2525.github.io/SmartDealsHub/about.html</loc>
   </url>
@@ -23,7 +54,7 @@
   </url>
 
   <url>
-    <loc>https://qureshi2525.github.io/SmartDealsHub/wishlist.html</loc>
+    <loc>https://qureshi2525.github.io/SmartDealsHub/terms.html</loc>
   </url>
 
 </urlset>
